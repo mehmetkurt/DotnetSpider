@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
@@ -31,7 +31,7 @@ public class QueueSchedulerTests
         Parallel.For(0, 1000, new ParallelOptions {MaxDegreeOfParallelism = 20},
             async i => { await scheduler.DequeueAsync(); });
 
-        Assert.Equal(1002, scheduler.GetTotalAsync().Result);
+        Assert.Equal(1002, await scheduler.GetTotalAsync());
     }
 
     [Fact(DisplayName = "EnqueueAndDequeueQueueBfs")]
@@ -47,7 +47,7 @@ public class QueueSchedulerTests
 
         var request = (await scheduler.DequeueAsync()).First();
         Assert.Equal("http://www.a.com/", request.RequestUri.ToString());
-        Assert.Equal(2, scheduler.GetTotalAsync().Result);
+        Assert.Equal(2, await scheduler.GetTotalAsync());
     }
 
     [Fact(DisplayName = "EnqueueAndDequeueQueueDfs")]
@@ -63,7 +63,7 @@ public class QueueSchedulerTests
 
         var request = (await scheduler.DequeueAsync()).First();
         Assert.Equal("http://www.b.com/", request.RequestUri.ToString());
-        Assert.Equal(2, scheduler.GetTotalAsync().Result);
+        Assert.Equal(2, await scheduler.GetTotalAsync());
     }
 
     [Fact(DisplayName = "ParallelEnqueueAndDequeueQueueDfs")]
@@ -84,6 +84,6 @@ public class QueueSchedulerTests
         Parallel.For(0, 1000, new ParallelOptions {MaxDegreeOfParallelism = 20},
             async i => { await scheduler.DequeueAsync(); });
 
-        Assert.Equal(1002, scheduler.GetTotalAsync().Result);
+        Assert.Equal(1002, await scheduler.GetTotalAsync());
     }
 }

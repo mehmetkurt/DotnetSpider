@@ -52,11 +52,6 @@ public struct ObjectId : IComparable<ObjectId>, IEquatable<ObjectId>, IConvertib
 
     public ObjectId(ReadOnlySpan<byte> bytes)
     {
-        if (bytes == null)
-        {
-            throw new ArgumentNullException(nameof(bytes));
-        }
-
         if (bytes.Length != 12)
         {
             throw new ArgumentException("Byte array must be 12 bytes long", nameof(bytes));

@@ -23,7 +23,7 @@ class Program
 
         
 
-            var builder = Builder.CreateDefaultBuilder<MySpider>();
+            var builder = Builder.CreateDefaultBuilder<EntitySpider>();
             builder.UseSerilog();
             builder.UseRabbitMQ();
             await builder.Build().RunAsync();

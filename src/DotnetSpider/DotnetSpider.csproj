@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <PackageId>DotnetSpider</PackageId>
@@ -9,16 +9,14 @@
   <Import Project="../../package.props" />
 
   <ItemGroup>
-    <PackageReference Include="MessagePack" Version="3.1.4" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.5" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.5" />
+    <PackageReference Include="MessagePack" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="Dapper" Version="2.1.72" />
+    <PackageReference Include="Dapper" Version="2.1.79" />
     <PackageReference Include="HtmlAgilityPack" Version="1.12.4" />
-    <PackageReference Include="System.Text.Json" Version="10.0.5" />
-    <PackageReference Include="System.Threading.Channels" Version="10.0.5" />
-    <PackageReference Include="System.Threading.RateLimiting" Version="10.0.5" />
+    <PackageReference Include="System.Threading.RateLimiting" Version="10.0.10" />
     <PackageReference Include="ZCJ.HashedWheelTimer" Version="0.10.2" />
     <PackageReference Include="murmurhash" Version="1.0.3" />
   </ItemGroup>

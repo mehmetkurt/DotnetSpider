@@ -57,7 +57,7 @@ public class MySqlQueueSchedulerTests(ITestOutputHelper testOutputHelper)
         ParallelUtilities.For(0, 1000, new ExecutionDataflowBlockOptions {MaxDegreeOfParallelism = 20},
             async _ => { await scheduler.DequeueAsync(); });
 
-        Assert.Equal(1002, scheduler.GetTotalAsync().Result);
+        Assert.Equal(1002, await scheduler.GetTotalAsync());
         await scheduler.CleanAsync();
     }
 
@@ -74,7 +74,7 @@ public class MySqlQueueSchedulerTests(ITestOutputHelper testOutputHelper)
 
         var request = (await scheduler.DequeueAsync()).First();
         Assert.Equal("http://www.a.com/", request.RequestUri.ToString());
-        Assert.Equal(2, scheduler.GetTotalAsync().Result);
+        Assert.Equal(2, await scheduler.GetTotalAsync());
         await scheduler.CleanAsync();
     }
 

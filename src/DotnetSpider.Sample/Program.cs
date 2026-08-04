@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using DotnetSpider.Sample.samples;
@@ -43,7 +43,7 @@ class Program
         // await ProxySpider.RunAsync();
         // await EntitySpider.RunMySqlQueueAsync();
 
-        await CnBlogsSpider.RunAsync();
+        await TrendyolSpider.RunAsync();
 
         Console.WriteLine("Bye!");
     }
